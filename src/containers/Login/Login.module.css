@@ -1,0 +1,53 @@
+.Login {
+    /* background: red; */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.Login .HeadersContainer {
+    margin-bottom: 25px;
+}
+
+.Login .FormContainer {
+    text-align: center;
+}
+
+.Login .FormContainer .Subheader {
+    font-weight: 300;
+    margin-top: 15px;
+}
+
+.Login .FormContainer .Form {
+    width: 70%;
+    margin: auto;
+}
+
+.Login .FormContainer .Input {
+    padding: 7px;
+    border: 1px solid #cfcfcf;
+    display: block;
+    margin: auto;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.Login .FormContainer .Submit {
+    display: block;
+    background-color: rgb(38, 117, 179);
+    padding: 7px;
+    text-decoration: none;
+    color: white;
+}
+
+.Login .FormContainer .ForgottenPassword {
+    margin: 15px;
+    display: block;
+}
+
+/* .Login .FormContainer .Submit a {
+    color: white;
+    text-decoration: none;
+} */
