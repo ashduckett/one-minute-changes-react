@@ -3,3 +3,33 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.btn {
+  font-family: Helvetica, sans-serif;
+  padding: 6px 12px;
+  margin-left: .5rem;
+  /* height: 100px; */
+  color: white;
+  outline:none;  
+  border: none;
+  border-radius: .25rem;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn.primary:hover {
+  background-color: #0062cc;
+}
+
+.btn.default {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.btn.default:hover {
+  background-color: #5a6268;
+}

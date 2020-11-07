@@ -1,0 +1,13 @@
+.ChangeContainer {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+}
+
+.ChangesRow {
+    display: flex;
+}
+
+.TimerValue {
+    /* color: white; */
+}

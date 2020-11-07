@@ -56,3 +56,14 @@
     font-weight: bold;
     color: rgb(38, 117, 179);
 }
+
+.Login .FormContainer .BackToLogin a {
+    margin: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(38, 117, 179);
+}
+
+.Login .FormContainer .BackToLogin {
+    margin: 15px;
+}
