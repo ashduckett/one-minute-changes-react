@@ -6,6 +6,7 @@ import ModalButton from '../../components/UI/ModalButton/ModalButton';
 import ModalCountdown from '../../components/UI/ModalCountdown/ModalCountdown';
 import ModalSubmit from '../../components/UI/ModalSubmit/ModalSubmit';
 import ModalExerciseIntroduction from '../../components/UI/ModalExerciseIntroduction/ModalExerciseIntroduction';
+import ChordChangeButton from '../../components/ChordChangeButton/ChordChangeButton';
 
 class OneMinuteChanges extends Component {
     state = {
@@ -27,18 +28,44 @@ class OneMinuteChanges extends Component {
     }
 
     componentDidMount() {
-        axios.get('/chords/changes', {
-            // grant_type: 'password',
-            // client_id: '2',
-            // client_secret: 'xZ1kOBYHq4Q50dbQXZeB8xOmU5q90mbVnwa6esFf',
-            // username: this.state.email,
-            // password: this.state.password
-        }).then((response) => {
-            this.setState({
-                changes: response.data.data
-            });
-            console.log(this.state.changes)
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        // TODO: Sort these on the backend.
+        // console.log('HELLO')
+        axios.get('/chords/changes').then((response) => {
+            console.log(response)
+            this.setState({ changes : response.data })
         });
+
+
+
+        // axios.get('/chords/changes', {
+        //     // grant_type: 'password',
+        //     // client_id: '2',
+        //     // client_secret: 'xZ1kOBYHq4Q50dbQXZeB8xOmU5q90mbVnwa6esFf',
+        //     // username: this.state.email,
+        //     // password: this.state.password
+        // }).then((response) => {
+        //     this.setState({
+        //         changes: response.data.data
+        //     });
+        //     console.log(this.state.changes)
+        // });
     }
 
     startClock = () => {
@@ -90,38 +117,46 @@ class OneMinuteChanges extends Component {
     }
 
     render() {
-        let currVal = 0;
-        let jsx = [];
-
-        if (this.state.changes && this.state.changes.length > 0) {
-            const chordChanges = this.state.changes;
-
-            for (let rows = 0; rows < 7; rows++) {
-                let changes = [];
-                for (let i = 0; i <= rows; i++) {
-                    let inScopeVal = currVal;
-                    changes.push(
-                        <div className={classes.ChangeContainer} key={currVal}>
-                            {(chordChanges[currVal].user_changes && chordChanges[currVal].user_changes.length > 0) ? chordChanges[currVal].user_changes[0].count : 0}
-                            
-                            <a href="#" onClick={() => this.practice(chordChanges[inScopeVal].id)}>Practice</a>
-                        </div>)
-                    currVal++;
+        console.log('RENDER')
+        //console.log(this.state.changes);
+        const changes = this.state.changes;
+        let maxColCount = 1;
+        let currentCol = 0;
+      
+        
+        if (changes) {
+            
+            for (let i = 0; i < changes.length; i++) {
+                
+                if (maxColCount < changes.length) {
+                    
+                    if (currentCol < maxColCount) {
+                        console.log(i)
+                        currentCol++;
+                    } else {
+                        console.log(i)
+                        console.log('break')
+                        currentCol = 0;
+                        maxColCount++;
+                    }
                 }
-                jsx.push(<div className={classes.ChangesRow} key={`${rows + '_outer'}`}>{changes}</div>);
+                
             }
         }
 
+
         return (   
             <div>
-                <Modal visible={this.state.showModal} currentStep={this.state.modalStep}>
+                {/* <Modal visible={this.state.showModal} currentStep={this.state.modalStep}>
                     <ModalExerciseIntroduction closeModal={this.hideModal} nextStep={this.incrementStep} />
                     <ModalCountdown countdownEnded={this.endOfExercise}/>
                     <ModalSubmit closeModal={this.hideModal} submit={this.submitUserResult}></ModalSubmit>
-                </Modal>
-                {jsx}
+                </Modal> */}
+                {/* {jsx} */}
+                In Progress
             </div>
         )
+    // }
     }
 }
 

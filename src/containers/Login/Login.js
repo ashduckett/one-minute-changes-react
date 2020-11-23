@@ -10,7 +10,7 @@ class Login extends Component {
     }
 
     loginHandler = () => {
-
+        console.log('logging in...')
         // This request is failing. Why.
         axios.post('http://local.oneminutechanges.com/oauth/token', {
             grant_type: 'password',
